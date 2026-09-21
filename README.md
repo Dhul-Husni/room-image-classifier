@@ -1,11 +1,20 @@
 # Room condition classification
 
-Download and extract [submission.zip](https://github.com/Dhul-Husni/room-image-classifier/releases/latest/download/submission.zip).
+```bash
+git clone https://github.com/Dhul-Husni/room-image-classifier.git
+cd room-image-classifier
+```
+
+Download [model.zip](https://github.com/Dhul-Husni/room-image-classifier/releases/download/v0.1.0/model.zip) into the cloned repository.
+
+```bash
+unzip model.zip
+uv sync --locked
+```
 
 ## Inference
 
 ```bash
-uv sync --locked
 uv run python predict.py /path/to/photos --output predictions.csv
 ```
 
