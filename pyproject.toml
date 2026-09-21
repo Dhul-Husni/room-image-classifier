@@ -1,0 +1,29 @@
+[project]
+name = "room-image-classifier"
+version = "0.1.0"
+description = "Room condition classification with SigLIP2 image features and logistic regression"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pillow",
+    "scikit-learn",
+    "torch",
+    "torchvision",
+    "transformers",
+]
+
+[tool.mypy]
+files = ["train.py", "predict.py"]
+cache_dir = ".cache/mypy"
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "torchvision.*"]
+ignore_missing_imports = true
+
+[dependency-groups]
+dev = [
+    "mypy>=2.3.1",
+]
